@@ -58,7 +58,7 @@ public class WorldController : MonoBehaviour
         var startPosition = Character.position;
         for (float t = 0; t < MovingDuration; t += Time.deltaTime)
         {
-            Character.position = Vector3.Lerp(startPosition, _currentLocation.position, t);
+            Character.position = Vector3.Lerp(startPosition, newLocation.position, t);
             yield return null;
         }
         Character.position = _currentLocation.position;
