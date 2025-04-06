@@ -56,7 +56,8 @@ public class WorldController : MonoBehaviour
     IEnumerator Moving(Transform newLocation)
     {
         var startPosition = Character.position;
-        for (float t = 0; t < MovingDuration; t += Time.deltaTime)
+        for (float t = 0; t < 1; t += Time.deltaTime / MovingDuration)
+
         {
             Character.position = Vector3.Lerp(startPosition, newLocation.position, t);
             yield return null;
