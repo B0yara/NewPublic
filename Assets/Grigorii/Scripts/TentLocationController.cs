@@ -1,37 +1,27 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TentLocationActivity
+public class TentLocationController : Screen
+
 {
-    ToTent,
-    Bag,
-    Return,
-    PhisicsExersice
-}
-public class TentLocationController : MonoBehaviour
-{
-
-
-
+    [SerializeField]
+    private GameObject Inventory;
+    [SerializeField]
+    private GameObject Weapons;
     public void PhisicsExersice()
     {
-
     }
 
     public void Return()
     {
-
+        ScreenManager.Instance.ShowScreen("Camp");
     }
 
     public void Bag()
     {
 
-    }
-
-    public void ToTent()
-    {
-
+        Inventory.SetActive(!Inventory.activeSelf);
+        Weapons.SetActive(Inventory.activeSelf);
     }
 }
