@@ -62,7 +62,7 @@ public class WorldController : MonoBehaviour
             Character.position = Vector3.Lerp(startPosition, newLocation.position, t);
             yield return null;
         }
-        Character.position = _currentLocation.position;
         _currentLocation = newLocation;
+        Character.position = _currentLocation.position;
     }
 }
