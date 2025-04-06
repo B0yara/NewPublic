@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public struct Road
+{
+
+}
+
 public class WorldController : MonoBehaviour
 {
     public Transform[] Locations;
+
+    [SerializeField]
     public float MovingDuration = 1f;
     public Transform Character;
     private Transform _currentLocation;
@@ -39,15 +46,14 @@ public class WorldController : MonoBehaviour
             return;
         }
 
-        _currentLocation = Locations[point];
         if (_currentMoving != null)
         {
             StopCoroutine(_currentMoving);
         }
-        _currentMoving = StartCoroutine(Moving());
+        _currentMoving = StartCoroutine(Moving(Locations[point]));
     }
 
-    IEnumerator Moving()
+    IEnumerator Moving(Transform newLocation)
     {
         var startPosition = Character.position;
         for (float t = 0; t < MovingDuration; t += Time.deltaTime)
@@ -56,5 +62,6 @@ public class WorldController : MonoBehaviour
             yield return null;
         }
         Character.position = _currentLocation.position;
+        _currentLocation = newLocation;
     }
 }
