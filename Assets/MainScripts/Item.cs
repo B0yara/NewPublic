@@ -17,14 +17,17 @@ public class Item : MonoBehaviour
 
     public int[] _itemStats;
 
-    public int PerceptionMin = 1;
-    public int PerceptionMax = 10;
     [Space]
-    public int AdaptationMin = 1;
-    public int AdaptationMax = 10;
+    [SerializeField] private int PerceptionMin = 1;
+    [SerializeField] private int PerceptionMax = 10;
+
     [Space]
-    public int ExistenceMin = 1;
-    public int ExistenceMax = 10;
+    [SerializeField] private int AdaptationMin = 1;
+    [SerializeField] private int AdaptationMax = 10;
+
+    [Space]
+    [SerializeField] private int ExistenceMin = 1;
+    [SerializeField] private int ExistenceMax = 10;
 
     private void Start()
     {

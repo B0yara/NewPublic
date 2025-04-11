@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+public  class Entity : MonoBehaviour
 {
-    public Stats EntityStats;
+    public  Stats EntityStats;
     /// <summary>
     /// Всегда должен принимать stats в длину 3 (Добавляет статы)
     /// </summary>
     /// <param name="stats"></param>
-    public void AddStats(int[] stats)
+    public  void AddStats(int[] stats)
     {
         EntityStats.Perception += stats[0];
         EntityStats.Adaptation += stats[1];
@@ -19,7 +19,7 @@ public class Entity : MonoBehaviour
     /// Всегда должен принимать stats в длину 3 (вычитает статы)
     /// </summary>
     /// <param name="stats"></param>
-    public void RemoveStats(int[] stats)
+    public  void RemoveStats(int[] stats)
     {
         int[] minusStats = new int[3];
         minusStats[0] = -stats[0];
@@ -28,4 +28,4 @@ public class Entity : MonoBehaviour
 
         AddStats(minusStats);
     }
-}
+} 

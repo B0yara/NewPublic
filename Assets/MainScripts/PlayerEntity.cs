@@ -4,12 +4,5 @@ using UnityEngine;
 
 public class PlayerEntity : Entity
 {
-    /// <summary>
-    /// Бонусы от постоянных предметов
-    /// </summary>
-    List<Bonuses> _ItemBonuses;
-
-
-    
 
 }

@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UiEntityStats : MonoBehaviour
+public class UIEntity : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Entity entity;
 
-    // Update is called once per frame
-    void Update()
+    public TMPro.TextMeshPro Perception;
+    public TMPro.TextMeshPro Adaptation;
+    public TMPro.TextMeshPro Existence;
+    public void UpdateStats()
     {
-        
+        Perception.text = entity.EntityStats.Perception.ToString();
+        Adaptation.text = entity.EntityStats.Adaptation.ToString();
+        Existence.text = entity.EntityStats.Existence.ToString();
     }
 }
