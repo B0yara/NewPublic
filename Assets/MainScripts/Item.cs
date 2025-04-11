@@ -8,21 +8,23 @@ public enum _ItemType
     AllTime
 }
 
+/// <summary>
+/// Скрипт будет менятся
+/// </summary>
 public class Item : MonoBehaviour
 {
     public _ItemType itemType;
 
     public int[] _itemStats;
 
-    
-    public int stat1Min = 1;
-    public int stat1Max = 10;
+    public int PerceptionMin = 1;
+    public int PerceptionMax = 10;
     [Space]
-    public int stat2Min = 1;
-    public int stat2Max = 10;
+    public int AdaptationMin = 1;
+    public int AdaptationMax = 10;
     [Space]
-    public int stat3Min = 1;
-    public int stat3Max = 10;
+    public int ExistenceMin = 1;
+    public int ExistenceMax = 10;
 
     private void Start()
     {
@@ -31,9 +33,9 @@ public class Item : MonoBehaviour
     void RandomStats()
     {
         _itemStats = new int[3] {
-            Random.Range(stat1Min, stat1Max),
-            Random.Range(stat2Min, stat2Max),
-            Random.Range(stat3Min, stat3Max)
+            Random.Range(PerceptionMin, PerceptionMax),
+            Random.Range(AdaptationMin, AdaptationMax),
+            Random.Range(ExistenceMin, ExistenceMax)
         };
     }
 }
